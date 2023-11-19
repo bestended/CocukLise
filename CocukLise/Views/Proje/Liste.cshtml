@@ -1,0 +1,89 @@
+﻿@model IEnumerable<coreModel.Model.Projeler>
+
+@{
+    ViewData["Title"] = "deneme";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container">
+    <div class="row">
+
+        <div class="col-md-12">
+            <p style="margin-top:10px; width:400px; background-color:red; float:left; margin-left:500px; border-radius:25px;">
+                <a asp-action="Ekle" style="margin-top:10px; border-radius:25px; color:white; width:500px; margin-left:200px; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">Ekle</a>
+            </p>
+            <table class="table table-danger text-md-center">
+                <thead>
+
+
+                    <tr>
+
+
+                        <th>
+                            Proje Adı
+                        </th>
+                        <th>
+                            Başlangıç Tarihi
+                        </th>
+
+                        <th>
+                            Bitiş Tarihi
+                        </th>
+                        <th>
+                            Görev Id
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+
+                            <td>
+                                @item.projeAdi
+                            </td>
+
+                            <td>
+                                @item.projeBaslangicTarih
+                            </td>
+
+                            <td>
+                                @item.projeBitisTarih
+                            </td>
+
+                            <td>
+                                @item.gorevID
+                            </td>
+
+                            <td>
+
+                                <a asp-action="Güncelle" asp-route-id="@item.projeID" style=" color:white; background-color:yellowgreen;">Güncelle</a> |
+
+                                <a asp-action="Sil" asp-route-id="@item.projeID" style="color:white; background-color:blue;">Sil</a>
+
+                            </td>
+
+                        </tr>
+
+
+
+                    }
+
+
+
+
+                </tbody>
+
+            </table>
+
+        </div>
+    </div>
+
+
+
+
+
+</div>

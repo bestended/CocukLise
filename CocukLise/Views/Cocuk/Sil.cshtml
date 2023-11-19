@@ -1,0 +1,47 @@
+﻿@model coreModel.Model.Cocuklar
+
+@{
+    ViewData["Title"] = "Sil";
+     Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div style="margin-left:500px;">
+
+<h1>Sil</h1>
+
+<div>
+    <h4>Cocuklar</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.adSoyad)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.adSoyad)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.cinsiyet)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.cinsiyet)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DogumTarih)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DogumTarih)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.calisan)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.calisan.adSoyad)
+        </dd class>
+    </dl>
+    
+    <form asp-action="Sil">
+        <input type="hidden" asp-for="cocukID" />
+            <input type="submit" value="Sil" class="btn btn-danger" style="margin-top:5px;" /> |
+        <a asp-action="Liste">Geri dön</a>
+    </form>
+</div>
+</div>

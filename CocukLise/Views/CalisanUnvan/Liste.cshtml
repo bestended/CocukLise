@@ -1,0 +1,104 @@
+﻿@model IEnumerable<coreModel.listView.CalisanUnvan>
+
+@{
+    ViewData["Title"] = "deneme";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container" style="margin-top:10px;">
+    <div class="row">
+
+        <div class="col-md-12">
+
+            <table class="table table-danger text-md-center">
+                <thead>
+
+
+                    <tr>
+
+
+                        <th>
+                            Ad Soyad
+                        </th>
+                        <th>
+                            Çalışan Cinsiyeti
+                        </th>
+                        <th>
+                            İşe Giriş Tarihi
+                        </th>
+                        <th>
+                            Vardiya Durumu
+                        </th>
+
+                        <th>
+                            Maaş
+                        </th>
+                        <th>
+                            Prim
+                        </th>
+
+                        <th>
+                            Unvan Id
+                        </th>
+                        <th>
+                            Unvan Adı
+                        </th>
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+
+                            <td>
+                                @item.adSoyad
+                            </td>
+
+                            <td>
+                                @item.calisanCinsiyet
+                            </td>
+                            <td>
+                                @item.iseBaslamaTarih
+                            </td>
+                            <td>
+                                @item.calisanVardiya
+                            </td>
+                            <td>
+                                @item.calisanMaas
+                            </td>
+                            <td>
+                                @item.calisanPrim
+                            </td>
+
+                            <td>
+                                @item.unvanID
+                            </td>
+                            <td>
+                                @item.unvanAdi
+                            </td>
+                         
+
+
+                        </tr>
+
+
+
+                    }
+
+
+
+
+                </tbody>
+
+            </table>
+
+        </div>
+    </div>
+
+
+
+
+
+</div>

@@ -1,0 +1,42 @@
+﻿@model coreModel.Model.Gorevler
+
+@{
+    ViewData["Title"] = "Sil";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+<div style="margin-left:500px;">
+
+    <h1>Sil</h1>
+
+    <div>
+        <h4>Gorevler</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.gorevTanim)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.gorevTanim)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.gorevAdi)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.gorevAdi)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.puan)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.puan)
+            </dd>
+        </dl>
+
+        <form asp-action="Sil">
+            <input type="hidden" asp-for="gorevID" />
+            <input type="submit" value="Sil" class="btn btn-danger" style="margin-top:5px;" /> |
+            <a asp-action="Liste">Geri dön</a>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,50 @@
+﻿@model coreModel.Model.Cocuklar
+
+@{
+    ViewData["Title"] = "Güncelle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+<div style="margin-left:500px;">
+    <h1>Güncelle</h1>
+
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Güncelle">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="cocukID" />
+                <div class="form-group">
+                    <label asp-for="adSoyad" class="control-label"></label>
+                    <input asp-for="adSoyad" class="form-control" />
+                    <span asp-validation-for="adSoyad" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="cinsiyet" class="control-label"></label>
+                    <input asp-for="cinsiyet" class="form-control" />
+                    <span asp-validation-for="cinsiyet" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="DogumTarih" class="control-label"></label>
+                    <input asp-for="DogumTarih" class="form-control" />
+                    <span asp-validation-for="DogumTarih" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="calisanID" class="control-label"></label>
+                    <input asp-for="calisanID" class="form-control" />
+                    <span asp-validation-for="calisanID" class="text-danger"></span>
+                </div>
+               
+                <div class="form-group">
+                    <input type="submit" value="Güncelle" class="btn btn-warning" style="margin-top:5px;" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <a asp-action="Liste">Geri dön</a>
+    </div>
+
+
+</div>

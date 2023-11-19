@@ -1,0 +1,39 @@
+﻿@model coreModel.Model.Birimler
+
+@{
+    ViewData["Title"] = "Güncelle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div style="margin-left:500px;">
+    <h1>Güncelle</h1>
+
+
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Güncelle">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="birimID" />
+                <div class="form-group">
+                    <label asp-for="birimAdi" class="control-label"></label>
+                    <input asp-for="birimAdi" class="form-control" />
+                    <span asp-validation-for="birimAdi" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="birim" class="control-label"></label>
+                    <input asp-for="birim" class="form-control" />
+                    <span asp-validation-for="birim" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Güncelle" class="btn btn-warning" style="margin-top:5px;" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <a asp-action="Liste">Geri dön</a>
+    </div>
+</div>

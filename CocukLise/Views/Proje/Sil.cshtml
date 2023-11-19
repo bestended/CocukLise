@@ -1,0 +1,49 @@
+﻿@model coreModel.Model.Projeler
+
+@{
+    ViewData["Title"] = "Sil";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+<div style="margin-left:500px;">
+<h1>Sil</h1>
+
+<div>
+    <h4>Projeler</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.projeAdi)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.projeAdi)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.projeBaslangicTarih)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.projeBaslangicTarih)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.projeBitisTarih)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.projeBitisTarih)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.gorev)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.gorev.gorevID)
+        </dd class>
+    </dl>
+    
+    <form asp-action="Sil">
+        <input type="hidden" asp-for="projeID" />
+            <input type="submit" value="Sil" class="btn btn-danger" style="margin-top:5px;" /> |
+        <a asp-action="Liste">Geri dön</a>
+    </form>
+   </div>
+
+</div>

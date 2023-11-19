@@ -1,0 +1,68 @@
+﻿@model coreModel.Model.Personeller
+
+@{
+    ViewData["Title"] = "Güncelle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div style="margin-left:500px;">
+    <h1>Güncelle</h1>
+
+
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Güncelle">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="calisanID" />
+                <div class="form-group">
+                    <label asp-for="adSoyad" class="control-label"></label>
+                    <input asp-for="adSoyad" class="form-control" />
+                    <span asp-validation-for="adSoyad" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="calisanCinsiyet" class="control-label"></label>
+                    <input asp-for="calisanCinsiyet" class="form-control" />
+                    <span asp-validation-for="calisanCinsiyet" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="iseBaslamaTarih" class="control-label"></label>
+                    <input asp-for="iseBaslamaTarih" class="form-control" />
+                    <span asp-validation-for="iseBaslamaTarih" class="text-danger"></span>
+                </div>
+                <div class="form-group form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" asp-for="calisanVardiya" /> @Html.DisplayNameFor(model => model.calisanVardiya)
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label asp-for="calisanMaas" class="control-label"></label>
+                    <input asp-for="calisanMaas" class="form-control" />
+                    <span asp-validation-for="calisanMaas" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="calisanPrim" class="control-label"></label>
+                    <input asp-for="calisanPrim" class="form-control" />
+                    <span asp-validation-for="calisanPrim" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="gorevID" class="control-label"></label>
+                    <input asp-for="gorevID" class="form-control" />
+                    <span asp-validation-for="gorevID" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="unvanID" class="control-label"></label>
+                    <input asp-for="unvanID" class="form-control" />
+                    <span asp-validation-for="unvanID" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Güncelle" class="btn btn-warning" style="margin-top:5px;" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <a asp-action="Index">Back to List</a>
+    </div>
+
+</div>

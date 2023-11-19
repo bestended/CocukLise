@@ -1,0 +1,129 @@
+﻿@model IEnumerable<coreModel.Model.Personeller>
+
+@{
+    ViewData["Title"] = "deneme";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container">
+    <div class="row">
+
+        <div class="col-md-12">
+
+
+            <p style="margin-top:10px; width:400px; background-color:red; float:left; margin-left:500px; border-radius:25px;">
+                <a asp-action="Ekle" style="margin-top:10px; border-radius:25px; color:white; width:500px; margin-left:200px; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">Ekle</a>
+            </p>
+            <table class="table table-danger text-md-center">
+                <thead>
+
+
+                    <tr>
+
+
+                        <th>
+                            Ad Soyad
+                        </th>
+                        <th>
+                            Cinsiyet
+                        </th>
+
+                        <th>
+                            İşe Başlama Tarihi
+                        </th>
+                        <th>
+                            Vardiya
+                        </th>
+                        <th>
+                            Maaş
+                        </th>
+                        <th>
+                            Prim
+                        </th>
+                        <th>
+                            Görev Id
+                        </th>
+                        <th>
+                            Unvan Id
+                        </th>
+
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+
+                            <td>
+                                @item.adSoyad
+
+                            </td>
+
+                            <td>
+                                @item.calisanCinsiyet
+                            </td>
+                            <td>
+                                @item.iseBaslamaTarih
+
+                            </td>
+                            
+                            <td>
+                                @if (item.calisanVardiya==true)
+                                {
+                                    <span>
+                                        Gece
+                                    </span>
+                                }
+                                else
+                                {
+                                    <span>
+                                        Gündüz
+                                    </span>
+                                }
+
+                            </td>
+                              <td>
+                                @item.calisanMaas
+                            </td>
+                            <td>
+                                @item.calisanPrim
+                            </td>
+                            <td>
+                                @item.gorevID
+                            </td>
+                            <td>
+                                @item.unvanID
+                            </td>
+                            <td>
+
+                                <a asp-action="Güncelle" asp-route-id="@item.calisanID" style=" color:white; background-color:yellowgreen;">Güncelle</a> |
+
+                                <a asp-action="Sil" asp-route-id="@item.calisanID" style="color:white; background-color:blue;">Sil</a>
+
+                            </td>
+
+
+                        </tr>
+
+
+
+                    }
+
+
+
+
+                </tbody>
+
+            </table>
+
+        </div>
+    </div>
+
+
+
+
+
+</div>

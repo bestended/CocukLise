@@ -1,0 +1,34 @@
+﻿@model coreModel.Model.Unvanlar
+
+@{
+    ViewData["Title"] = "Ekle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div style="margin-left:500px;">
+
+    <h1>Ekle</h1>
+
+    <h4>Unvanlar</h4>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Ekle">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="unvanAdi" class="control-label"></label>
+                    <input asp-for="unvanAdi" class="form-control" />
+                    <span asp-validation-for="unvanAdi" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Ekle" class="btn btn-primary" style="margin-top:5px;" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <a asp-action="Liste">Geri dön</a>
+    </div>
+
+</div>

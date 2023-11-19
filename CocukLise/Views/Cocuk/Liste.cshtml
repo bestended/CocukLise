@@ -1,0 +1,92 @@
+﻿@model IEnumerable<coreModel.Model.Cocuklar>
+
+@{
+    ViewData["Title"] = "deneme";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container">
+    <div class="row">
+
+        <div class="col-md-12">
+
+
+            <p style="margin-top:10px; width:400px; background-color:red; float:left; margin-left:500px; border-radius:25px;">
+                <a asp-action="Ekle" style="margin-top:10px; border-radius:25px; color:white; width:500px; margin-left:200px; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">Ekle</a>
+            </p>
+            <table class="table table-danger text-md-center">
+                <thead>
+
+
+                    <tr>
+
+
+                        <th>
+                            Ad Soyad
+                        </th>
+                        <th>
+                            Cinsiyet
+                        </th>
+
+                        <th>
+                            Doğum Tarihi
+                        </th>
+                        <th>
+                            Çalışan ID
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+
+                            <td>
+                                @item.adSoyad
+
+                            </td>
+
+                            <td>
+                                @item.cinsiyet
+                            </td>
+                            <td>
+                                @item.DogumTarih
+
+                            </td>
+
+                            <td>
+                                @item.calisanID
+                            </td>
+                            <td>
+
+                                <a asp-action="Güncelle" asp-route-id="@item.cocukID" style=" color:white; background-color:yellowgreen;">Güncelle</a> |
+
+                                <a asp-action="Sil" asp-route-id="@item.cocukID" style="color:white; background-color:blue;">Sil</a>
+
+                            </td>
+
+
+                        </tr>
+
+
+
+                    }
+
+
+
+
+                </tbody>
+
+            </table>
+
+        </div>
+    </div>
+
+
+
+
+
+</div>

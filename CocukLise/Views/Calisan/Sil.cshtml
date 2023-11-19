@@ -1,0 +1,71 @@
+﻿@model coreModel.Model.Personeller
+
+@{
+    ViewData["Title"] = "Sil";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div style="margin-left:500px;">
+<h1>Sil</h1>
+
+
+<div>
+    <h4>Personeller</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.adSoyad)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.adSoyad)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.calisanCinsiyet)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.calisanCinsiyet)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.iseBaslamaTarih)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.iseBaslamaTarih)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.calisanVardiya)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.calisanVardiya)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.calisanMaas)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.calisanMaas)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.calisanPrim)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.calisanPrim)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.gorev)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.gorev.gorevID)
+        </dd class>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.unvan)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.unvan.unvanID)
+        </dd class>
+    </dl>
+    
+    <form asp-action="Sil">
+        <input type="hidden" asp-for="calisanID" />
+            <input type="submit" value="Sil" class="btn btn-danger" style="margin-top:5px;" /> |
+        <a asp-action="Liste">Geri dön</a>
+    </form>
+</div>
+</div>
